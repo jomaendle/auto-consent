@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Automatic Cookie-Consent Acceptance",
+  "version": "1.0",
+  "description": "Automatically accepts cookie-consent popups.",
+  "author": "Johannes Mändle",
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js"],
+      "css": ["css/content.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "page_action": {
+    "default_title": "Automatic Cookie-Consent Acceptance",
+    "default_popup": "index.html"
+  },
+  "background": {
+    "scripts": ["js/background.js"]
+  }
+}
